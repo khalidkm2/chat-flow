@@ -1,0 +1,18 @@
+import "dotenv/config";
+import { z } from "zod";
+
+const EnvSchema = z.object({
+  PORT: z.string().default("5000"),
+  DATABASE_URL: z.string().url(),
+  CLIENT_URL: z.string().url().default("http://localhost:4000"),
+  CLERK_PUBLISHABLE_KEY: z.string(),
+  CLERK_SECRET_KEY: z.string(),
+});
+
+const parsed = EnvSchema.safeParse(process.env);
+
+if (!parsed.success) {
+  process.exit(1);
+}
+
+export const env = parsed.data;
