@@ -107,9 +107,9 @@ function Navbar() {
             className="flex items-center gap-2 font-bold text-lg text-sidebar-foreground"
           >
             <span className="bg-linear-to-r from-primary to-chart-2 bg-clip-text text-transparent">
-              Ace
+              Chat
             </span>
-            <span className="text-foreground/90">Forum</span>
+            <span className="text-foreground/90">Flow</span>
           </Link>
           <nav className="hidden items-center gap-1 md:flex">
             {navItems.map(renderNavLinks)}
